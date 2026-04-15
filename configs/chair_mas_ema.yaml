@@ -1,0 +1,32 @@
+# configs/chair_mas_ema.yaml
+# Most stable result: MAS + EMA (17 consecutive stable epochs)
+
+data_root    : /path/to/shapenetpart
+obj_class    : 4
+num_points   : 1024
+train_ratio  : 0.8
+seed         : 42
+
+batch_size   : 8
+n_epochs     : 30
+lr           : 3.0e-4
+step_size    : 15
+gamma        : 0.5
+
+emb_dim      : 512
+dgcnn_k      : 20
+n_fg         : 256
+n_bg         : 256
+
+lambda_rep     : 0.5
+lambda_spatial : 0.01
+k_spatial      : 20
+lambda_entropy : 0.0001
+lambda_ema     : 0.1
+
+use_mas       : true
+use_ema       : true
+ema_alpha     : 0.999
+ema_warmup    : 5
+
+save_dir      : results/chair_mas_ema
